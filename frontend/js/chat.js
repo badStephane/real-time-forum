@@ -267,7 +267,7 @@ function openChatWindow(user) {
 
         // send the message object as a JSON string to the server
         socket.send(JSON.stringify(stopTypingMessage));
-      }, 3000); // The number of milliseconds to wait before sending the stoptyping message (3000ms = 3s)
+      }, 1000); // The number of milliseconds to wait before sending the stoptyping message (3000ms = 3s)
     });
 
     // Add an event listener to the message input field to detect when the Enter key is pressed
