@@ -163,7 +163,10 @@
     position: absolute;
     bottom: 13px;
     left: 50%;
-    color: #ffffff;
+    /* color: var(--first-color); */
+    color: #fff;
+    font-weight: 700;
+    z-index: 999;
     /* Rotate the typing indicator vertical */
     writing-mode: vertical-rl;
     text-orientation: mixed;
@@ -181,6 +184,7 @@
     border-radius: 50%;
     background-color: rgb(132, 175, 218);
     animation: dot-bounce 1.5s infinite ease-in-out;
+    transform: translateY(-80%);
   }
   
   .typing-dot:nth-child(2) {
@@ -198,6 +202,6 @@
     }
     50% {
       transform: translateY(-10px) scale(1.5);
-      opacity: 0.5;
+      opacity: 1;
     }
   }

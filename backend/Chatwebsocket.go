@@ -63,24 +63,24 @@ func handleMessageMessage(conn *websocket.Conn, message ServerMessage) {
 	}
 }
 
-// func handleTypingMessage(conn *websocket.Conn, message ServerMessage) {
-// 	//open db
-// 	db := OpenDatabase()
-// 	defer db.Close()
-// 	// Get the user that sent the message
-// 	user := message.Data["to"]
+func handleTypingMessage(conn *websocket.Conn, message ServerMessage) {
+	//open db
+	db := OpenDatabase()
+	defer db.Close()
+	// Get the user that sent the message
+	user := message.Data["to"]
 
-// 	// send typing signal to the client
-// 	Broadcast <- ServerMessage{Type: "typing", Data: map[string]string{"to": user, "from": message.Data["from"]}}
-// }
+	// send typing signal to the client
+	Broadcast <- ServerMessage{Type: "typing", Data: map[string]string{"to": user, "from": message.Data["from"]}}
+}
 
-// func handleStopTypingMessage(conn *websocket.Conn, message ServerMessage) {
-// 	//open db
-// 	db := OpenDatabase()
-// 	defer db.Close()
-// 	// Get the user that sent the message
-// 	user := message.Data["to"]
+func handleStopTypingMessage(conn *websocket.Conn, message ServerMessage) {
+	//open db
+	db := OpenDatabase()
+	defer db.Close()
+	// Get the user that sent the message
+	user := message.Data["to"]
 
-// 	// send typing signal to the client
-// 	Broadcast <- ServerMessage{Type: "stopTyping", Data: map[string]string{"to": user, "from": message.Data["from"]}}
-// }
+	// send typing signal to the client
+	Broadcast <- ServerMessage{Type: "stopTyping", Data: map[string]string{"to": user, "from": message.Data["from"]}}
+}

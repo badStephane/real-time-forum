@@ -151,10 +151,9 @@ func handleWebSocketMessage(conn *websocket.Conn, message ServerMessage) {
 		handleGetOfflineUsersMessage(conn, message)
 	case "postsByCategory":
 		handleGetPostsForCategory(conn, message)
+	case "typing":
+		handleTypingMessage(conn, message)
+	case "stopTyping":
+		handleStopTypingMessage(conn, message)
 	}
 }
-
-
-
-
-
