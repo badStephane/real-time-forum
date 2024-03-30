@@ -1,0 +1,143 @@
+.comments-modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    top: 50%;
+    width: 65%;
+    height: auto;
+    max-height: 90%;
+    transform: translate(-50%, -50%);
+    overflow: auto;
+    background-color: dodgerblue;
+    color: #fff;
+  }
+  
+  .comments-modal-content {
+    color: #000;
+    background-color: transparent;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 100%;
+    overflow-y: auto;
+    scrollbar-width: none; /* For Firefox */
+  }
+  
+  .comments-modal-content::-webkit-scrollbar {
+    display: none; /* For Webkit browsers (Chrome, Safari, etc.) */
+  }
+  
+  .close-btn {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  #comments-list {
+    list-style: none;
+    margin: 0 1em;
+    font-family: Arial, sans-serif;
+    max-height: 500px; /* Adjust this value based on the desired maximum height */
+    overflow-y: auto;
+    scrollbar-width: none; /* For Firefox */
+  }
+  
+  #comments-list::-webkit-scrollbar {
+    display: none; /* For Webkit browsers (Chrome, Safari, etc.) */
+  }
+  
+  #comments-list blockquote {
+    color: rgb(0, 0, 0);
+    background-color: rgba(255, 255, 255, 0.8);
+    clear: both;
+    font-style: normal;
+    margin: 0 0 20px 0;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  #comments-list footer {
+    color: #000000;
+    padding: 0.5em 1em 0 0;
+    text-align: right;
+  }
+  
+  #comments-list li:nth-child(2n) blockquote {
+    background-color: rgba(32, 52, 66, 0.8);
+  }
+  
+  /* Add a Comment */
+  #add-comment label {
+    clear: left;
+    float: left;
+    text-align: left;
+    width: 150px;
+  }
+  #add-comment input[type="text"],
+  #add-comment input[type="email"],
+  #add-comment input[type="url"] {
+    float: left;
+    width: 200px;
+  }
+  
+  #add-comment textarea {
+    float: left;
+    height: 50px;
+    width: 495px;
+  }
+  
+  #add-comment p.req {
+    clear: both;
+    margin: 0 0.5em 1em 0;
+    text-align: right;
+  }
+  
+  #add-comment input[type="submit"] {
+    background-color: #c9cdd1;
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+  
+  #add-comment input[type="submit"]:hover {
+    background-color: #236992;
+  }
+  
+  #comments {
+    background: #fff;
+    margin-bottom: 2em;
+    overflow: hidden;
+    padding: 20px 20px;
+    width: 760px;
+    border-radius: 10px;
+  }
+  
+  #comments label {
+    display: block;
+  }
+  
+  #comments label:after {
+    content: " *";
+  }
+  
+  #comments ol li:nth-child(2n + 1) {
+    background-color: #928543;
+  }
+  
+  #respond {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: black;
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 30px;
+    width: 100%;
+  }
+  

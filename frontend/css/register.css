@@ -1,0 +1,78 @@
+/* Register form */
+.register-form {
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    margin-top: 50px;
+    border: 1px solid #0f1bca38;
+    border-radius: 30px;
+    background-color: var(--third-color);
+  }
+  
+  .register-form label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #C3C3C3;
+  }
+  
+  .register-form input,
+  .register-form select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--first-color);
+    border-radius: 5px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    color: #C3C3C3;
+    background-color: var(--third-color);
+  }
+  
+  .register-form button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--first-color);
+    color: #020202;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .register-form button#register-button {
+    background-color: var(--fourth-color);
+    margin-top: 10px;
+  }
+  
+  .register-form button#login-switch-button {
+    background-color: var(--fourth-color);
+    margin-top: 10px;
+  }
+  
+  /* Registration success message  that appears in the middle of the screen*/
+  #registration-success {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--first-color);
+    color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Registration error message that appears in the middle of the screen that matches the size of the register-form */
+  #registration-error {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(92, 5, 5, 0.8);
+    color: #fdffff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(133, 5, 5, 0.3);
+  }
+  

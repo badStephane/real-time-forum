@@ -1,0 +1,203 @@
+/* Chat window styles */
+.chat-window {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 300px;
+    height: 400px;
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+    border: 1px solid #232323;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .chat-container {
+    position: relative;
+    padding: 10px;
+    flex-grow: 1;
+    overflow-y: scroll;
+  }
+  
+  /* Chat header styles */
+  .chat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: var(--first-color);
+    color: #fff;
+    font-weight: bold;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+  
+  .chat-header-bot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color : #c06108;
+    color: #fff;
+    font-weight: bold;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+  
+  /* Close button styles */
+  .chat-header button {
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    position: sticky;
+    top: 10px;
+    right: 10px;
+  }
+  
+  /* Adjust chat window bottom position to accommodate header */
+  .chat-window {
+    bottom: 60px;
+  }
+  
+  .message {
+    margin-bottom: 10px;
+  }
+  
+  .message.sent {
+    text-align: right;
+  }
+  
+  .message.received {
+    text-align: left;
+  }
+  
+  .message-wrapper {
+    padding-bottom: 30px;
+  }
+  
+  .message p {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #f2f2f2;
+    margin: 0;
+  }
+  
+  .input-container {
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto; /* Center the input container */
+  }
+  
+  .textarea-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the label and textarea vertically */
+  }
+  
+  .input-container textarea {
+    flex-grow: 1;
+    margin-right: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .input-container button {
+    background-color: var(--first-color);
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  .input-container label {
+    display: block;
+    font-family: Fira Code, monospace;
+    font-size: 20px;
+    margin-bottom: 2px; /* Add space between label and textarea */
+  }
+  
+  .input-container-chat button {
+    background-color: var(--first-color);
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  
+  .input-container-chat {
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 100%;
+    margin: 0 auto; /* Center the input container */
+    flex-direction: row;
+  }
+  
+  .input-container-chat input {
+    width: 100%;
+    color: whitesmoke;
+    background-color: #232323;
+  }
+  
+  .timestamp {
+    display: block;
+    font-size: 0.8em;
+    color: #999;
+    margin-bottom: 3px;
+  }
+  
+  .typing-indicator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    position: absolute;
+    bottom: 13px;
+    left: 50%;
+    color: #ffffff;
+    /* Rotate the typing indicator vertical */
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+  }
+  
+  .is-typing{
+    transform: translate(10%, -110%);
+    writing-mode: horizontal-tb;
+    text-orientation: mixed;
+  }
+  
+  .typing-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: rgb(132, 175, 218);
+    animation: dot-bounce 1.5s infinite ease-in-out;
+  }
+  
+  .typing-dot:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  
+  .typing-dot:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+  
+  @keyframes dot-bounce {
+    0%,
+    100% {
+      transform: translateY(0) scale(1);
+    }
+    50% {
+      transform: translateY(-10px) scale(1.5);
+      opacity: 0.5;
+    }
+  }
