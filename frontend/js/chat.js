@@ -125,7 +125,7 @@ typingIndicator.style.display = "none"; // Initially hide the typing indicator
 
 const isTyping = document.createElement("p")
 isTyping.className = "is-typing";
-isTyping.textContent = "is typing";
+// isTyping.textContent = "is typing";
 typingIndicator.appendChild(isTyping);
 
 // Create three dots for the typing indicator
@@ -238,37 +238,43 @@ function openChatWindow(user) {
     let typingTimer; // Declare a variable to store the typing timer
 
     // Add an event listener to the message input field to detect when a key is pressed and send a typing event to the server
-    messageInput.addEventListener("keydown", (event) => {
-      // Clear any existing typing timer
-      clearTimeout(typingTimer);
+    // Add an event listener to the message input field to detect when a key is pressed and send a typing event to the server
+messageInput.addEventListener("input", (event) => {
+  // Clear any existing typing timer
+  clearTimeout(typingTimer);
 
-      // Construct the message object
-      const stopTypingMessage = {
-        type: "typing",
-        data: {
-          from: sessionStorage.getItem("nickname"),
-          to: user.nickname,
-        },
-      };
+  // Construct the message object
+  const typingMessage = {
+    type: "typing",
+    data: {
+      from: sessionStorage.getItem("nickname"),
+      to: user.nickname,
+    },
+  };
 
-      // send the message object as a JSON string to the server
-      socket.send(JSON.stringify(stopTypingMessage));
+  // Send the message object as a JSON string to the server
+  socket.send(JSON.stringify(typingMessage));
 
-      // Set a timer to send a stoptyping message after 3 seconds of inactivity
-      typingTimer = setTimeout(() => {
-        // Construct the message object
-        const stopTypingMessage = {
-          type: "stopTyping",
-          data: {
-            from: sessionStorage.getItem("nickname"),
-            to: user.nickname,
-          },
-        };
+  // Set a timer to send a stop typing message after 1 second of inactivity
+  typingTimer = setTimeout(() => {
+    // Construct the message object
+    const stopTypingMessage = {
+      type: "stopTyping",
+      data: {
+        from: sessionStorage.getItem("nickname"),
+        to: user.nickname,
+      },
+    };
 
-        // send the message object as a JSON string to the server
-        socket.send(JSON.stringify(stopTypingMessage));
-      }, 1000); // The number of milliseconds to wait before sending the stoptyping message (3000ms = 3s)
-    });
+    // Send the message object as a JSON string to the server
+    socket.send(JSON.stringify(stopTypingMessage));
+  }, 1000); // The number of milliseconds to wait before sending the stop typing message (1000ms = 1s)
+
+  // Update the typing indicator to show the nickname of the person typing
+  // isTyping.textContent = sessionStorage.getItem("user.nickname") + " is typing";
+  isTyping.textContent = user.nickname + " is typing";
+});
+
 
     // Add an event listener to the message input field to detect when the Enter key is pressed
     messageInput.addEventListener("keydown", (event) => {

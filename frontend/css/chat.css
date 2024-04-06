@@ -161,8 +161,8 @@
     align-items: center;
     gap: 5px;
     position: absolute;
-    bottom: 13px;
-    left: 50%;
+    bottom: 8px;
+    left: 24%;
     /* color: var(--first-color); */
     color: #fff;
     font-weight: 700;
